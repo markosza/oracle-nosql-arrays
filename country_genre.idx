@@ -1,0 +1,20 @@
+  country    genre    acct_id   user_id
+----------------------------------------
+
+   France    comedy      1        2
+   France    french      1        2
+
+   Germany   action      1        1
+   Germany   comedy      1        1
+   Germany   crime       1        1
+   Germany   french      1        1
+   Germany   spanish     1        1
+
+   USA       comedy      2        1
+   USA       comedy      2        2
+   USA       danish      2        1
+   USA       danish      2        2
+   USA       drama       2        1
+   USA       drama       2        2
+   USA       french      2        1
+   USA       french      2        2

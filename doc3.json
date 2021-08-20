@@ -1,0 +1,101 @@
+{
+  "acct_id" : 2,
+  "user_id" : 1,
+  "info" : {
+    "firstName": "Joe",
+    "lastName": "Biden",
+    "country" : "USA",
+    "shows": [
+      {
+        "showName": "Call My Agent",
+        "showId": 15,
+        "type": "tvseries",
+        "genres" : ["comedy", "french"], 
+        "numSeasons" : 2,
+        "seriesInfo": [
+          {
+            "seasonNum" : 1,
+            "numEpisodes" : 2,
+            "episodes": [
+              {
+                "episodeID": 20,
+                "lengthMin": 45,
+                "minWatched": 44,
+                "date": "2021-05-19"
+              },
+              {
+                "episodeID": 30,
+                "lengthMin": 42,
+                "minWatched": 42,
+                "date": "2021-05-19"
+              }
+            ]
+          },
+          {
+            "seasonNum": 2,
+            "numEpisodes" : 3,
+            "episodes": [
+              {
+                "episodeID": 40,
+                "lengthMin": 50,
+                "minWatched": 50,
+                "date": "2021-05-20"
+              },
+              {
+                "episodeID": 50,
+                "lengthMin": 45,
+                "minWatched": 45,
+                "date": "2021-05-21"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "showName": "Rita",
+        "showId": 16,
+        "type": "tvseries",
+        "genres" : ["comedy", "drama", "danish"],
+        "numSeasons" : 2,
+        "seriesInfo": [
+          {
+            "seasonNum" : 1,
+            "numEpisodes" : 2,
+            "episodes": [
+              {
+                "episodeID": 20,
+                "lengthMin": 65,
+                "minWatched": 65,
+                "date": "2021-03-18"
+              },
+              {
+                "episodeID": 30,
+                "lengthMin": 60,
+                "minWatched": 60,
+                "date": "2021-03-19"
+              }
+            ]
+          },
+          {
+            "seasonNum": 2,
+            "numEpisodes" : 2,
+            "episodes": [
+              {
+                "episodeID": 40,
+                "lengthMin": 50,
+                "minWatched": 50,
+                "date": "2021-05-05"
+              },
+              {
+                "episodeID": 50,
+                "lengthMin": 45,
+                "minWatched": 45,
+                "date": "2021-05-06"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
