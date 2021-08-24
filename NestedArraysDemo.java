@@ -28,39 +28,18 @@ import oracle.nosql.driver.values.StringValue;
  * A program to demostrate the writing and optimizing of queries over data
  * containing nested arrays.
  *
+ * The program uses the Oracle NoSQL java driver and runs over cloudsim, which
+ * is a single-process simulator of a cloud-based Oracle NoSQL installation.
+ *
  * The program creates a table whose rows model users of a show-streaming
  * service. It creates 5 indexes over this table, and loads the table with
- * some sample rows (contained in a number of .json files). Finally, it allows
- * its users to run a set of pre-packaged queries, or to run a specific query
- * from this set, or to write and execute their own query provided as a
- * command-line option.
+ * some sample rows. The sample rows are contained in a number of .json files
+ * (one file per row). Four sample rows are provided, but users can add their
+ * own .json files as well. Finally, the program allows its users to run a
+ * set of pre-packaged queries, or to run a specific query from this set, or
+ * to write and execute their own query provided as a command-line option.
  *
- * The program runs over cloudsim, which is a single-process simulator of a
- * cloud-based Oracle NoSQL installation. You can download cloudsim from
- * https://www.oracle.com/downloads/cloud/nosql-cloud-sdk-downloads.html.
- *
- * To compile and execute the program:
- *
- * Let $programDir be the directory containing this NestedArraysDemo.java file.
- * $programDir should contain a number of .json files. Each such .json file
- * contains the data for a table row as json text. Four sample such files are
- * provided with this NestedArraysDemo.java file. When executed, the program
- * looks for such .json files and loads the corresponding rows into the database.
- *
- * Let $driverDir be the directory containing the nosqldriver.jar.
- *
- * start cloudsim
- *
- * cd $programDir
- *
- * javac -cp $driverDir/nosqldriver.jar NestedArraysDemo.java 
- *
- * java -cp .:$driverDir/nosqldriver.jar NestedArraysDemo <endpoint> [<options>]
- *
- * Assuming clousim was started on your local machine with the default port,
- * <endpoint> should be http://localhost:8080.
- *
- * Available options are:
+ * Available program options are:
  *
  * -showPlan
  * Use it if you want to display the execution plan of the query or queries
@@ -402,7 +381,7 @@ public class NestedArraysDemo {
             TableRequest tableRequest = new TableRequest();
             tableRequest.setStatement(tableDDL);
             tableRequest.setTableLimits(new TableLimits(50, 50, 50));
-            System.out.println("Creating table " + tableName);
+            //System.out.println("Creating table " + tableName);
 
             handle.doTableRequest(tableRequest,
                                   60000, /* wait up to 60 sec */
@@ -532,7 +511,7 @@ public class NestedArraysDemo {
     private static void insertRow(String fname)
         throws IOException {
 
-        System.out.println("Inserting row from file " + fname);
+        //System.out.println("Inserting row from file " + fname);
 
         String jsonText = readFileToString(fname);
         MapValue row = (MapValue)JsonUtils.createValueFromJson(jsonText, null);
@@ -541,7 +520,7 @@ public class NestedArraysDemo {
         putRequest.setTableName(tableName);
         PutResult putRes = handle.put(putRequest);
 
-        System.out.println("Insert row from file " + fname);
+        System.out.println("Inserted row from file " + fname);
     }
 
     private static String readFileToString(String fname) throws IOException {
